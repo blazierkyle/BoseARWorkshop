@@ -13,6 +13,7 @@
 		25E583C2232580ED00DE6A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E583C0232580ED00DE6A33 /* LaunchScreen.storyboard */; };
 		25E583CB2325880B00DE6A33 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E583CA2325880B00DE6A33 /* HomeTableViewController.swift */; };
 		25FF9E5223258E2A009DBB59 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FF9E5123258E2A009DBB59 /* DeviceViewController.swift */; };
+		25FF9E5423259C92009DBB59 /* scat-song.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 25FF9E5323259C92009DBB59 /* scat-song.m4a */; };
 		8BC6E1DB994BCCC8377EF4FE /* Pods_BoseARWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA72BCA6D748270C69C8C096 /* Pods_BoseARWorkshop.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		25E583C3232580ED00DE6A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25E583CA2325880B00DE6A33 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		25FF9E5123258E2A009DBB59 /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		25FF9E5323259C92009DBB59 /* scat-song.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "scat-song.m4a"; sourceTree = "<group>"; };
 		9D1167166C54ACEC7DA5F02F /* Pods-BoseARWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoseARWorkshop.release.xcconfig"; path = "Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		BE518F536869D6DA8FF82BAD /* Pods-BoseARWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoseARWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
 		EA72BCA6D748270C69C8C096 /* Pods_BoseARWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoseARWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				25E583BE232580ED00DE6A33 /* Assets.xcassets */,
 				25E583C0232580ED00DE6A33 /* LaunchScreen.storyboard */,
 				25E583C3232580ED00DE6A33 /* Info.plist */,
+				25FF9E5323259C92009DBB59 /* scat-song.m4a */,
 			);
 			path = BoseARWorkshop;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FF9E5423259C92009DBB59 /* scat-song.m4a in Resources */,
 				25E583C2232580ED00DE6A33 /* LaunchScreen.storyboard in Resources */,
 				25E583BF232580ED00DE6A33 /* Assets.xcassets in Resources */,
 				25E583BD232580EC00DE6A33 /* Main.storyboard in Resources */,
