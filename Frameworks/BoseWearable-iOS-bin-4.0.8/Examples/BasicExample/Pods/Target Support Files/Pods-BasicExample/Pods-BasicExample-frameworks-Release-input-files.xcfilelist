@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-BasicExample/Pods-BasicExample-frameworks.sh
+${PODS_ROOT}/../../../Frameworks/iOS/BLECore.framework
+${PODS_ROOT}/../../../Frameworks/iOS/BoseWearable.framework
+${PODS_ROOT}/../../../Frameworks/iOS/Logging.framework

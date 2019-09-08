@@ -3,25 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		25E583B8232580EC00DE6A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E583B7232580EC00DE6A33 /* AppDelegate.swift */; };
-		25E583BA232580EC00DE6A33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E583B9232580EC00DE6A33 /* ViewController.swift */; };
 		25E583BD232580EC00DE6A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E583BB232580EC00DE6A33 /* Main.storyboard */; };
 		25E583BF232580ED00DE6A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E583BE232580ED00DE6A33 /* Assets.xcassets */; };
 		25E583C2232580ED00DE6A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E583C0232580ED00DE6A33 /* LaunchScreen.storyboard */; };
+		25E583CB2325880B00DE6A33 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E583CA2325880B00DE6A33 /* HomeTableViewController.swift */; };
+		25FF9E5223258E2A009DBB59 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FF9E5123258E2A009DBB59 /* DeviceViewController.swift */; };
+		8BC6E1DB994BCCC8377EF4FE /* Pods_BoseARWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA72BCA6D748270C69C8C096 /* Pods_BoseARWorkshop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25E583B4232580EC00DE6A33 /* BoseARWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoseARWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E583B7232580EC00DE6A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25E583B9232580EC00DE6A33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25E583BC232580EC00DE6A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25E583BE232580ED00DE6A33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E583C1232580ED00DE6A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25E583C3232580ED00DE6A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25E583CA2325880B00DE6A33 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		25FF9E5123258E2A009DBB59 /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		9D1167166C54ACEC7DA5F02F /* Pods-BoseARWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoseARWorkshop.release.xcconfig"; path = "Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop.release.xcconfig"; sourceTree = "<group>"; };
+		BE518F536869D6DA8FF82BAD /* Pods-BoseARWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoseARWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
+		EA72BCA6D748270C69C8C096 /* Pods_BoseARWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoseARWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC6E1DB994BCCC8377EF4FE /* Pods_BoseARWorkshop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				25E583B6232580EC00DE6A33 /* BoseARWorkshop */,
 				25E583B5232580EC00DE6A33 /* Products */,
+				408AB78DC65CB8F933BE8AEE /* Pods */,
+				C7C00959B33C002A9B8C5791 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +64,39 @@
 			isa = PBXGroup;
 			children = (
 				25E583B7232580EC00DE6A33 /* AppDelegate.swift */,
-				25E583B9232580EC00DE6A33 /* ViewController.swift */,
+				25E583C9232587E900DE6A33 /* View Controllers */,
 				25E583BB232580EC00DE6A33 /* Main.storyboard */,
 				25E583BE232580ED00DE6A33 /* Assets.xcassets */,
 				25E583C0232580ED00DE6A33 /* LaunchScreen.storyboard */,
 				25E583C3232580ED00DE6A33 /* Info.plist */,
 			);
 			path = BoseARWorkshop;
+			sourceTree = "<group>";
+		};
+		25E583C9232587E900DE6A33 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25E583CA2325880B00DE6A33 /* HomeTableViewController.swift */,
+				25FF9E5123258E2A009DBB59 /* DeviceViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		408AB78DC65CB8F933BE8AEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE518F536869D6DA8FF82BAD /* Pods-BoseARWorkshop.debug.xcconfig */,
+				9D1167166C54ACEC7DA5F02F /* Pods-BoseARWorkshop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7C00959B33C002A9B8C5791 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA72BCA6D748270C69C8C096 /* Pods_BoseARWorkshop.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25E583C6232580ED00DE6A33 /* Build configuration list for PBXNativeTarget "BoseARWorkshop" */;
 			buildPhases = (
+				21D6C95016E629D2883593A8 /* [CP] Check Pods Manifest.lock */,
 				25E583B0232580EC00DE6A33 /* Sources */,
 				25E583B1232580EC00DE6A33 /* Frameworks */,
 				25E583B2232580EC00DE6A33 /* Resources */,
+				17E1F10CAB0835BB1EDD7AE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +167,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17E1F10CAB0835BB1EDD7AE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoseARWorkshop/Pods-BoseARWorkshop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21D6C95016E629D2883593A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoseARWorkshop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		25E583B0232580EC00DE6A33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E583BA232580EC00DE6A33 /* ViewController.swift in Sources */,
+				25E583CB2325880B00DE6A33 /* HomeTableViewController.swift in Sources */,
 				25E583B8232580EC00DE6A33 /* AppDelegate.swift in Sources */,
+				25FF9E5223258E2A009DBB59 /* DeviceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +360,7 @@
 		};
 		25E583C7232580ED00DE6A33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE518F536869D6DA8FF82BAD /* Pods-BoseARWorkshop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +379,7 @@
 		};
 		25E583C8232580ED00DE6A33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1167166C54ACEC7DA5F02F /* Pods-BoseARWorkshop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

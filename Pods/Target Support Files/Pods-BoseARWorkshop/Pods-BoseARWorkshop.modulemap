@@ -1,0 +1,6 @@
+framework module Pods_BoseARWorkshop {
+  umbrella header "Pods-BoseARWorkshop-umbrella.h"
+
+  export *
+  module * { export * }
+}
