@@ -19,6 +19,10 @@ class DeviceViewController: UIViewController {
         static let audioFileExtension = "m4a"
     }
     
+    private enum FeatureFlags {
+        static let changeVolumeWhenLookingRight = true
+    }
+    
     // MARK: Properties
     
     private let sensorDispatch = SensorDispatch(queue: .main)
@@ -277,6 +281,14 @@ extension DeviceViewController: SensorDispatchHandler {
 
         // Update the listener position
         audioEnvironment.listenerAngularOrientation = AVAudioMake3DAngularOrientation(yaw, pitch, roll)
+        
+        if FeatureFlags.changeVolumeWhenLookingRight {
+            audioPlayer.volume = (quaternion.zRotation.degreesFromRadians < 0) ? 0.5 : 1.0
+        }
+    }
+    
+    func receivedGesture(type: GestureType, timestamp: SensorTimestamp) {
+        print("Receieved gesture \(type.rawValue)!")
     }
 }
 
