@@ -21,8 +21,9 @@ class DeviceViewController: UIViewController {
     
     // MARK: Properties
     
-    private var token: ListenerToken?
     private let sensorDispatch = SensorDispatch(queue: .main)
+    private var token: ListenerToken?
+    private var yawOffset: Double?
     
     var session: WearableDeviceSession! {
         didSet {
@@ -36,11 +37,18 @@ class DeviceViewController: UIViewController {
     private lazy var audioEnvironment = AVAudioEnvironmentNode()
     private lazy var audioPlayer = AVAudioPlayerNode()
     
+    // MARK: View Properties
+    
+    @IBOutlet var playPauseButton: UIButton!
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sensorDispatch.handler = self
+        setupAudioEnvironment()
+        setupPlayPauseButton()
+        setupNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +58,11 @@ class DeviceViewController: UIViewController {
     }
     
     // MARK: Setup
+    
+    private func setupPlayPauseButton() {
+        playPauseButton.setTitle("START PLAYING", for: .normal)
+        playPauseButton.setTitle("STOP PLAYING", for: .selected)
+    }
     
     private func configureSensors() {
         session.device?.configureSensors { config in
@@ -92,6 +105,9 @@ class DeviceViewController: UIViewController {
         guard let audioFormat = AVAudioFormat(standardFormatWithSampleRate: hardwareSampleRate, channels: 2) else { return }
         audioEngine.connect(audioEnvironment, to: audioEngine.outputNode, format: audioFormat)
         audioEnvironment.renderingAlgorithm = .HRTFHQ
+        
+        // Play sound
+        playSound()
     }
     
     private func setupAudioSession() {
@@ -163,13 +179,15 @@ class DeviceViewController: UIViewController {
     
     // MARK: Playback State Management
     
-    private func startPlaying() {
+    private func stopPlaying() {
         guard audioEngine.isRunning || audioPlayer.isPlaying else { return }
+        // Reset the current head direction
+        yawOffset = nil
         audioEngine.stop()
         audioPlayer.stop()
     }
     
-    private func stopPlaying() {
+    private func startPlaying() {
         do {
             try audioEngine.start()
             audioPlayer.play()
@@ -179,6 +197,11 @@ class DeviceViewController: UIViewController {
     }
     
     // MARK: Actions
+    
+    @IBAction func startStopPlayerButtonPressed(_ sender: UIButton) {
+        sender.isSelected ? stopPlaying() : startPlaying()
+        sender.isSelected.toggle()
+    }
     
     @objc private func handleInterruption(notification: Notification) {
         guard let userInfo = notification.userInfo,
@@ -232,7 +255,28 @@ extension DeviceViewController: WearableDeviceSessionDelegate {
 
 extension DeviceViewController: SensorDispatchHandler {
     func receivedGameRotation(quaternion: Quaternion, timestamp: SensorTimestamp) {
-        print("in rotation: \(quaternion.zRotation)")
+
+        // If needed, use the current yaw as the offset so the sound direction is directly in front
+        if yawOffset == nil {
+            yawOffset = quaternion.zRotation.degreesFromRadians
+        }
+        
+        var yaw = Float(quaternion.zRotation.degreesFromRadians - yawOffset!)
+
+        // Wrap around whatever the offset could have done, to bring the angle back in range.
+        while yaw < -180.0 {
+            yaw += 360.0
+        }
+        
+        while yaw > 180 {
+            yaw -= 360
+        }
+        
+        let pitch = quaternion.xRotation.floatDegreesFromRadians
+        let roll = quaternion.yRotation.floatDegreesFromRadians
+
+        // Update the listener position
+        audioEnvironment.listenerAngularOrientation = AVAudioMake3DAngularOrientation(yaw, pitch, roll)
     }
 }
 
@@ -251,5 +295,17 @@ extension AVAudioPlayerNode {
         scheduleFile(file,
                      at: nil,
                      completionHandler: loopCompletionHandler)
+    }
+}
+
+// MARK: - Double
+
+extension Double {
+    var degreesFromRadians: Double {
+        return self * 180.0 / .pi
+    }
+    
+    var floatDegreesFromRadians: Float {
+        return Float(degreesFromRadians)
     }
 }
